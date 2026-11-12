@@ -1,0 +1,927 @@
+{
+  "scenario": {
+    "qubits": 10,
+    "requests": [
+      {
+        "id": "R1",
+        "label": "Medical: injured, vulnerable household (3)",
+        "priority": 129.25
+      },
+      {
+        "id": "R2",
+        "label": "Rescue: family on a roof (6)",
+        "priority": 104.56
+      },
+      {
+        "id": "R3",
+        "label": "Shelter: 4 people, waiting 45 min",
+        "priority": 36.0
+      },
+      {
+        "id": "R4",
+        "label": "Food/water: 10 people, waiting 60 min",
+        "priority": 34.58
+      },
+      {
+        "id": "R5",
+        "label": "Rescue: 2 people, queued 40 min offline",
+        "priority": 80.0
+      }
+    ],
+    "volunteers": [
+      {
+        "id": "V1",
+        "label": "Bilal: car, first aid + swimmer"
+      },
+      {
+        "id": "V2",
+        "label": "Ayesha: car, first aid"
+      },
+      {
+        "id": "V3",
+        "label": "Usman: truck, last seen 10 min ago"
+      },
+      {
+        "id": "V4",
+        "label": "Sana: bicycle, swimmer"
+      },
+      {
+        "id": "V5",
+        "label": "Ali: car"
+      }
+    ],
+    "removed_by_flood": [],
+    "pruned": {
+      "no_road": [],
+      "skill": [
+        [
+          "V2",
+          "R2"
+        ],
+        [
+          "V2",
+          "R5"
+        ],
+        [
+          "V3",
+          "R1"
+        ],
+        [
+          "V3",
+          "R2"
+        ],
+        [
+          "V3",
+          "R5"
+        ],
+        [
+          "V4",
+          "R1"
+        ],
+        [
+          "V5",
+          "R1"
+        ],
+        [
+          "V5",
+          "R2"
+        ],
+        [
+          "V5",
+          "R5"
+        ]
+      ],
+      "too_far": [
+        [
+          "V4",
+          "R3"
+        ]
+      ],
+      "not_top_k": [
+        [
+          "V5",
+          "R3"
+        ],
+        [
+          "V3",
+          "R3"
+        ],
+        [
+          "V2",
+          "R4"
+        ],
+        [
+          "V5",
+          "R4"
+        ],
+        [
+          "V3",
+          "R4"
+        ]
+      ]
+    },
+    "closed_road_segments": 18,
+    "variables": [
+      [
+        "V1",
+        "R1",
+        4.8,
+        76.12
+      ],
+      [
+        "V1",
+        "R2",
+        21.6,
+        56.22
+      ],
+      [
+        "V1",
+        "R3",
+        9.6,
+        20.08
+      ],
+      [
+        "V1",
+        "R4",
+        26.4,
+        18.48
+      ],
+      [
+        "V1",
+        "R5",
+        19.2,
+        43.18
+      ],
+      [
+        "V2",
+        "R1",
+        7.2,
+        71.58
+      ],
+      [
+        "V2",
+        "R3",
+        12.0,
+        19.29
+      ],
+      [
+        "V4",
+        "R2",
+        24.0,
+        57.61
+      ],
+      [
+        "V4",
+        "R4",
+        12.0,
+        19.56
+      ],
+      [
+        "V4",
+        "R5",
+        18.0,
+        44.48
+      ]
+    ],
+    "penalty": 114.18
+  },
+  "baselines": {
+    "greedy": {
+      "assignment": [
+        [
+          "V1",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ]
+      ],
+      "value": 153.02,
+      "ratio": 0.7392,
+      "feasible": true
+    },
+    "hungarian": {
+      "assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V4",
+          "R2"
+        ]
+      ],
+      "value": 172.37,
+      "ratio": 0.8327,
+      "feasible": true
+    },
+    "exact": {
+      "assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ],
+      "value": 207.0,
+      "ratio": 1.0,
+      "feasible": true,
+      "seconds": 0.0011
+    },
+    "random": {
+      "p_feasible": 0.093,
+      "p_optimal": 0.0009765625
+    }
+  },
+  "qaoa": {
+    "cvar_p1": {
+      "seconds_cumulative": 0.89,
+      "optimizer_evals": 156,
+      "circuit_depth": 37,
+      "rzz_gates": 19,
+      "p_good90": 0.01343,
+      "p_feasible": 0.12109,
+      "p_optimal": 0.00391,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R5"
+          ],
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ],
+          [
+            "V4",
+            "R4"
+          ],
+          [
+            "V4",
+            "R5"
+          ]
+        ],
+        "feasible": false,
+        "value": -91.06474444507089,
+        "is_optimal": false,
+        "share": 0.01171875
+      },
+      "most_frequent_feasible_ratio": 0.55541,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "cvar_p2": {
+      "seconds_cumulative": 2.44,
+      "optimizer_evals": 145,
+      "circuit_depth": 57,
+      "rzz_gates": 38,
+      "p_good90": 0.0686,
+      "p_feasible": 0.49194,
+      "p_optimal": 0.02686,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R5"
+          ],
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ]
+        ],
+        "feasible": true,
+        "value": 189.86027530920745,
+        "is_optimal": false,
+        "share": 0.03662109375
+      },
+      "most_frequent_feasible_ratio": 0.91719,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "cvar_p3": {
+      "seconds_cumulative": 4.24,
+      "optimizer_evals": 157,
+      "circuit_depth": 77,
+      "rzz_gates": 57,
+      "p_good90": 0.01465,
+      "p_feasible": 0.14453,
+      "p_optimal": 0.00903,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R1"
+          ],
+          [
+            "V1",
+            "R2"
+          ],
+          [
+            "V1",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ]
+        ],
+        "feasible": false,
+        "value": -134.31500980909664,
+        "is_optimal": false,
+        "share": 0.017578125
+      },
+      "most_frequent_feasible_ratio": 0.81717,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "cvar_p4": {
+      "seconds_cumulative": 5.49,
+      "optimizer_evals": 85,
+      "circuit_depth": 97,
+      "rzz_gates": 76,
+      "p_good90": 0.12622,
+      "p_feasible": 0.2583,
+      "p_optimal": 0.0957,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R5"
+          ],
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ],
+          [
+            "V4",
+            "R4"
+          ]
+        ],
+        "feasible": true,
+        "value": 207.00314469314446,
+        "is_optimal": true,
+        "share": 0.095703125
+      },
+      "most_frequent_feasible_ratio": 1.0,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "cvar_p5": {
+      "seconds_cumulative": 8.58,
+      "optimizer_evals": 170,
+      "circuit_depth": 117,
+      "rzz_gates": 95,
+      "p_good90": 0.11353,
+      "p_feasible": 0.32642,
+      "p_optimal": 0.0957,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R5"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ],
+          [
+            "V4",
+            "R4"
+          ]
+        ],
+        "feasible": true,
+        "value": 137.2280549628105,
+        "is_optimal": false,
+        "share": 0.095947265625
+      },
+      "most_frequent_feasible_ratio": 0.66293,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "standard_p1": {
+      "seconds_cumulative": 1.45,
+      "optimizer_evals": 161,
+      "circuit_depth": 37,
+      "rzz_gates": 19,
+      "p_good90": 0.03784,
+      "p_feasible": 0.68701,
+      "p_optimal": 0.00513,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ]
+        ],
+        "feasible": true,
+        "value": 89.06278203802626,
+        "is_optimal": false,
+        "share": 0.019287109375
+      },
+      "most_frequent_feasible_ratio": 0.43025,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "standard_p2": {
+      "seconds_cumulative": 5.38,
+      "optimizer_evals": 300,
+      "circuit_depth": 57,
+      "rzz_gates": 38,
+      "p_good90": 0.05518,
+      "p_feasible": 0.88623,
+      "p_optimal": 0.00903,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V4",
+            "R2"
+          ]
+        ],
+        "feasible": true,
+        "value": 129.18842458567354,
+        "is_optimal": false,
+        "share": 0.04248046875
+      },
+      "most_frequent_feasible_ratio": 0.62409,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "standard_p3": {
+      "seconds_cumulative": 9.98,
+      "optimizer_evals": 286,
+      "circuit_depth": 77,
+      "rzz_gates": 57,
+      "p_good90": 0.07471,
+      "p_feasible": 0.92285,
+      "p_optimal": 0.0144,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V4",
+            "R2"
+          ]
+        ],
+        "feasible": true,
+        "value": 129.18842458567354,
+        "is_optimal": false,
+        "share": 0.075439453125
+      },
+      "most_frequent_feasible_ratio": 0.62409,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "standard_p4": {
+      "seconds_cumulative": 15.66,
+      "optimizer_evals": 300,
+      "circuit_depth": 97,
+      "rzz_gates": 76,
+      "p_good90": 0.14624,
+      "p_feasible": 0.89233,
+      "p_optimal": 0.03027,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ],
+          [
+            "V4",
+            "R4"
+          ]
+        ],
+        "feasible": true,
+        "value": 163.81898627730288,
+        "is_optimal": false,
+        "share": 0.04052734375
+      },
+      "most_frequent_feasible_ratio": 0.79138,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    },
+    "standard_p5": {
+      "seconds_cumulative": 22.07,
+      "optimizer_evals": 300,
+      "circuit_depth": 117,
+      "rzz_gates": 95,
+      "p_good90": 0.2373,
+      "p_feasible": 0.91187,
+      "p_optimal": 0.06177,
+      "p_optimal_random": 0.00098,
+      "most_frequent": {
+        "assignment": [
+          [
+            "V1",
+            "R5"
+          ],
+          [
+            "V2",
+            "R1"
+          ],
+          [
+            "V2",
+            "R3"
+          ],
+          [
+            "V4",
+            "R2"
+          ],
+          [
+            "V4",
+            "R4"
+          ]
+        ],
+        "feasible": true,
+        "value": 207.00314469314446,
+        "is_optimal": true,
+        "share": 0.061767578125
+      },
+      "most_frequent_feasible_ratio": 1.0,
+      "best_sampled_ratio": 1.0,
+      "best_sampled_assignment": [
+        [
+          "V1",
+          "R5"
+        ],
+        [
+          "V2",
+          "R1"
+        ],
+        [
+          "V2",
+          "R3"
+        ],
+        [
+          "V4",
+          "R2"
+        ],
+        [
+          "V4",
+          "R4"
+        ]
+      ]
+    }
+  },
+  "sweeps": {
+    "penalty": [
+      {
+        "factor": 1.1,
+        "p_feasible": 0.1523,
+        "p_optimal": 0.0059
+      },
+      {
+        "factor": 1.5,
+        "p_feasible": 0.1445,
+        "p_optimal": 0.009
+      },
+      {
+        "factor": 3.0,
+        "p_feasible": 0.1282,
+        "p_optimal": 0.0146
+      },
+      {
+        "factor": 6.0,
+        "p_feasible": 0.1594,
+        "p_optimal": 0.0095
+      }
+    ],
+    "scaling": [
+      {
+        "qubits": 4,
+        "p_optimal": 0.4844,
+        "p_random": 0.0625,
+        "seconds": 0.36
+      },
+      {
+        "qubits": 6,
+        "p_optimal": 0.1089,
+        "p_random": 0.015625,
+        "seconds": 0.93
+      },
+      {
+        "qubits": 5,
+        "p_optimal": 0.1169,
+        "p_random": 0.03125,
+        "seconds": 0.71
+      },
+      {
+        "qubits": 8,
+        "p_optimal": 0.0442,
+        "p_random": 0.00390625,
+        "seconds": 3.23
+      },
+      {
+        "qubits": 6,
+        "p_optimal": 0.1023,
+        "p_random": 0.015625,
+        "seconds": 2.69
+      },
+      {
+        "qubits": 6,
+        "p_optimal": 0.1057,
+        "p_random": 0.015625,
+        "seconds": 0.67
+      },
+      {
+        "qubits": 6,
+        "p_optimal": 0.1233,
+        "p_random": 0.015625,
+        "seconds": 0.63
+      },
+      {
+        "qubits": 7,
+        "p_optimal": 0.1116,
+        "p_random": 0.0078125,
+        "seconds": 2.14
+      },
+      {
+        "qubits": 8,
+        "p_optimal": 0.0,
+        "p_random": 0.00390625,
+        "seconds": 3.84
+      },
+      {
+        "qubits": 10,
+        "p_optimal": 0.0344,
+        "p_random": 0.0009765625,
+        "seconds": 4.55
+      },
+      {
+        "qubits": 8,
+        "p_optimal": 0.0073,
+        "p_random": 0.00390625,
+        "seconds": 2.49
+      }
+    ]
+  },
+  "headline_run": "cvar_p4"
+}
