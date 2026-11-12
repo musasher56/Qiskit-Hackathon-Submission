@@ -3,6 +3,10 @@
 **Qiskit Fall Fest 2026 Hackathon · Domain: Disaster Response**
 **Team:** Musa Sher, Yahya Kamran
 
+## Demostation
+
+[Watch Demo](demo.mp4)
+
 When a flood hits, help requests arrive in bursts. ReliefLink, our disaster-response platform design for Pakistan, currently matches volunteers **greedily**: it takes requests one at a time in priority order and gives each one its best free volunteer. In a surge this wastes scarce skills. In our test town, greedy sends Bilal, a first-aider who can also swim, to a medical call because he is closest. A rescue that sat queued offline for 40 minutes is then left with no swimmer at all.
 
 We assign all volunteers **jointly**, with travel times routed along a street network where the flood has closed roads and a bridge. We write the problem as a QUBO, solve it with **QAOA** (hand-built in Qiskit 2.x), and check every answer against greedy, the Hungarian algorithm and brute force.
