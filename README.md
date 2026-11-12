@@ -5,10 +5,9 @@
 
 ## Demostation
 
-<video controls width="100%">
-  <source src="demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/3612e13e-f53d-47a0-adef-d9ef16668ac5
+
+
 
 When a flood hits, help requests arrive in bursts. ReliefLink, our disaster-response platform design for Pakistan, currently matches volunteers **greedily**: it takes requests one at a time in priority order and gives each one its best free volunteer. In a surge this wastes scarce skills. In our test town, greedy sends Bilal, a first-aider who can also swim, to a medical call because he is closest. A rescue that sat queued offline for 40 minutes is then left with no swimmer at all.
 
