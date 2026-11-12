@@ -45,7 +45,7 @@ All numbers come from `python run_all.py` (seeded, so they reproduce exactly; un
 
 ![Architecture](results/architecture.png)
 
-The full write-up is in `docs/ReliefLink_Surge_Optimizer_Report.docx`, and the video script is in `docs/video_script.md`.
+The full write-up is in `ReliefLink_Surge_Optimizer_Report.docx`
 
 ## Where the quantum part is
 
@@ -107,7 +107,6 @@ streamlit run app.py               # interactive map demo in the browser
 | `architecture_diagram.py` | Draws `results/architecture.png` |
 | `tests/test_all.py` | Spec oracle tests (T1, T5, T8, T20) and mapping correctness checks |
 | `results/` | Generated outputs (committed so judges can see them without running) |
-| `docs/` | Hackathon report (.docx) and video script |
 
 ## Honest limitations
 
